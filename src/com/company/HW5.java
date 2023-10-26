@@ -3,14 +3,11 @@ package com.company;
 public class HW5 {
 
     //Напишите программу, чтобы проверить значения длины и ширины прямоугольника и определить, является ли он квадратным или нет.
-    public boolean checkRectangle(){
+    public boolean checkRectangle() {
         int length1 = 5, length2 = 5, width1 = 10, width2 = 10;
         boolean checking = false;
-        if(length1 == length2 && width1 == width2){
+        if (length1 == length2 && width1 == width2) {
             checking = true;
-        }
-        else{
-            checking = false;
         }
         return checking;
     }
@@ -19,12 +16,9 @@ public class HW5 {
     Если стоимость товара ниже 5000, то стоимость остается без изменений.
     Вычислите и выведите итоговую стоимость покупки для пользователя.*/
 
-    public double addSale(double price){
-        if (price > 5000){
-            price = price * 1.1;
-        }
-        else {
-            price = price;
+    public double addSale(double price) {
+        if (price > 5000) {
+            price = price * 0.9;
         }
         return price;
     }
@@ -39,27 +33,24 @@ public class HW5 {
     Создайте переменную grade и напечатайте в консоль соответствующую оценку в
     зависимости от значения переменной.*/
 
-    public char printValueGrade(int grade){
-        char valGrade;
-        if(grade < 25){
-            valGrade = 'F';
+    public char printValueGrade(int grade) {
+        char valGrade = 0;
+        if (grade < 101 || grade > 0) {
+            if (grade < 25) {
+                valGrade = 'F';
+            } else if (grade >= 25 && grade < 45) {
+                valGrade = 'E';
+            } else if (grade >= 45 && grade < 50) {
+                valGrade = 'D';
+            } else if (grade >= 50 && grade < 60) {
+                valGrade = 'C';
+            } else if (grade >= 60 && grade < 80) {
+                valGrade = 'B';
+            } else {
+                valGrade = 'A';
+            }
         }
-        else if(grade >= 25 && grade < 45){
-            valGrade = 'E';
-        }
-        else if(grade >= 45 && grade < 50){
-            valGrade = 'D';
-        }
-        else if(grade >= 50 && grade < 60){
-            valGrade = 'C';
-        }
-        else if(grade >= 60 && grade < 80){
-            valGrade = 'B';
-        }
-        else {
-            valGrade = 'A';
-        }
-        return  valGrade;
+        return valGrade;
     }
 
     /*Дано целое положительное число.
@@ -67,15 +58,15 @@ public class HW5 {
     Например, если дано число 12345, то вывод будет следующим: 54321.
     (Пока можно пропустить, до изучения циклов)*/
 
-    public int getReversed(int a){
+    public int getReversed(int a) {
         //int a = 12345;
         int reversed = 0;
-        while (a > 0){
+        while (a > 0) {
             int last = a % 10;
             reversed = reversed * 10 + last;
             //5 //4 //3 // 2 // 1
             a = a / 10; // 1234 // 123 // 12 // 1 // 0
-            System.out.println(reversed);
+            //System.out.println(reversed);
         }
         return reversed;
     }
@@ -83,13 +74,13 @@ public class HW5 {
     /*Дано целое положительное число.
     Напишите программу, которая выводит сообщение о том, является ли это число простым.*/
 
-    public boolean isPrime(int a){
+    public boolean isPrime(int a) {
         boolean primeNum = true;
-        if (a == 0 || a == 1){
+        if (a == 0 || a == 1) {
             primeNum = false;
-        }else{
-            for(int i = 2; i >= a / 2; i++){
-                if (a % i == 0){
+        } else {
+            for (int i = 2; i >= a / 2; i++) {
+                if (a % i == 0) {
                     return false;
                 }
             }
@@ -102,33 +93,25 @@ public class HW5 {
      */
 
     public boolean isOdd(int a) {
-        boolean oddNum = false;
-        if(a % 2 == 0){
+        /*boolean oddNum = true;
+        if (a % 2 == 0) {
             oddNum = false;
         }
-        else {
-            oddNum = true;
-        }
-        return oddNum;
+        return oddNum;*/
+        return a % 2 != 0;
     }
 
     /*Напишите программу, которая сравнивает два целых числа и определяет, какое из них больше.*/
 
-    public int isBigger(int a, int b){
-        int big;
-        if(a > b){
-            big = a;
-        }else{
-            big = b;
-        }
-        return big;
+    public int findMax(int a, int b) {
+        return Math.max(a, b);
     }
 
     //leap year
 
-    public boolean isLeapYear(int year){
+    public boolean isLeapYear(int year) {
         boolean leapYear = false;
-        if ((year % 400 == 0) ||(year % 4 == 0) && (year % 100 != 0)){
+        if ((year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0)) {
             return true;
         }
         return false;
@@ -136,62 +119,172 @@ public class HW5 {
 
     //Напишите программу, которая принимает номер дня недели (1 - Понедельник, 2 - Вторник и так далее) и выводит название дня недели.
 
-    public void findNameWeek(int a){
-        switch (a){
-            case 1:
-                System.out.println("Monday");
-                break;
-            case 2:
-                System.out.println("tuesday");
-                break;
-            case 3:
-                System.out.println("wednesday");
-                break;
-            case 4:
-                System.out.println("thursday");
-                break;
-            case 5:
-                System.out.println("friday");
-                break;
-            case 6:
-                System.out.println("saturday");
-                break;
-            case 7:
-                System.out.println("sunday");
-                break;
-            default:
-                System.out.println("Input from 1 to 7");
+    public String findNameWeek(int dayNumber) {
+        String weekDay;
+        switch (dayNumber) {
+            case 1 -> weekDay = "Monday";
+            case 2 -> weekDay = "tuesday";
+            case 3 -> weekDay = "wednesday";
+            case 4 -> weekDay = "thursday";
+            case 5 -> weekDay = "friday";
+            case 6 -> weekDay = "saturday";
+            case 7 -> weekDay = "sunday";
+
+            default -> {
+                return "Input from 1 to 7";
+            }
         }
+        return weekDay;
     }
     //Напишите программу, которая принимает координаты точки (x, y) и определяет, в каком квадранте координатной плоскости она находится.
 
-    public void findQuadrant(int x, int y){
-        if (x > 0 && y > 0){
-            System.out.println("I");
+    public String findQuadrant(int x, int y) {
+        String quadrant = "";
+        if (x > 0 && y > 0) {
+            quadrant = "I";
+        } else if (x < 0 && y > 0) {
+            quadrant = "II";
+        } else if (x < 0 && y < 0) {
+            quadrant = "III";
+        } else if (x > 0 && y < 0) {
+            quadrant = "VI";
         }
-        else if(x < 0 && y > 0){
-            System.out.println("II");
-        }
-        else if(x < 0 && y < 0){
-            System.out.println("III");
-        }
-        else if(x > 0 && y < 0){
-            System.out.println("IV");
-        }
+        return quadrant;
     }
 
 
     //Напишите программу, которая принимает длины трех сторон треугольника и определяет его тип (равносторонний, равнобедренный или разносторонний).
 
-    public void findTypeTriangle(int a, int b, int c){
+    public String findTypeTriangle(int a, int b, int c) {
+        String typeTriangle = "";
         if (a == b && b == c) {
-            System.out.println("equilateral");
+            typeTriangle = "equilateral";
         } else if (a == b || b == c || c == b || a == c) {
-            System.out.println("isosceles");
+            typeTriangle = "isosceles";
         } else {
-            System.out.println("scalene");
+            typeTriangle = "scalene";
         }
+        return typeTriangle;
+    }
+
+    /*
+    * Напишите программу для печати следующего сообщения:
+        i)
+          **********
+          **********
+          **********
+          **********
+
+        ii)
+        *
+        **
+        ***
+        ****
+        *****
+
+iii)
+        1
+      212
+    32123
+  4321234
+543212345*/
+    public void printAsterisk(int row, int column) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
+    }
+
+    public void printTriangleAsterisk(int rowSize) {
+        for (int i = 1; i <= rowSize; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public void printTriangleNumber() {
+        for (int i = 0; i <= 5; i++) {
+            for (int j = 1; j <= 5 - i; j++) {
+                System.out.print("  ");
+            }
+            for (int k = i; k >= 1; k--) {
+                System.out.print(k);
+            }
+            for (int k = 2; k <= i; k++) {
+                System.out.print(k);
+            }
+            System.out.println("");
+        }
+    }
+
+    //Даны два целых числа a и b.
+    // Напишите программу для вычисления суммы натуральных чисел в диапазоне от a до b.
+
+    public int sumRangeNumber(int a, int b) {
+        int sum = 0;
+        for (int i = a; i <= b; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    /*Класс A: 50%
+      Класс B: 25%
+      Класс C: 0%*/
+    public double calculateBonus(char classOfEmployee, double salary) {
+        double bonus;
+        if (classOfEmployee == 'A') {
+            bonus = salary * 0.5;
+        } else if (classOfEmployee == 'B') {
+            bonus = salary * 0.25;
+        } else
+            bonus = 0;
+        return bonus;
+    }
+
+    public double calculateSalaryWithBonus(char classOfEmployee, double salary) {
+        double salaryWithBonus = calculateBonus(classOfEmployee, salary) + salary;
+        return salaryWithBonus;
+    }
+
+
+    // 0 1 1 2 3 5 8 13 21
+
+    public int findFibonacciRecursion(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return findFibonacciRecursion(n - 1) + findFibonacciRecursion(n - 2);
+        }
+    }
+
+    public int[] findFibArr(int n) {
+        int[] arr = new int[n];
+        arr[0] = 0;
+        arr[1] = 1;
+        for (int i = 0; i < n; i++) {
+            arr[i] = arr[i - 1] + arr[i - 2];
+        }
+        return arr;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
