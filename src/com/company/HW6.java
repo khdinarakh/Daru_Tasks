@@ -18,7 +18,7 @@ public class HW6 {
     }
 
     // Дан массив целых значений. Напишите программу для поиска дубликатов значений.
-
+    //change it
     public void findDuplicatesArr(int[] arr) {
         System.out.println("Дубликаты = ");
         for (int i = 0; i < arr.length; i++) {
@@ -34,7 +34,7 @@ public class HW6 {
 
     //Дан массив целых значений. Напишите программу для проверки, содержит ли массив определенное значение.
 
-    public boolean existInArrGivenVal(int[] arr, int val) {
+    public boolean isValExistInArr(int[] arr, int val) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == val) {
                 return true;
@@ -60,11 +60,12 @@ public class HW6 {
 
     //Даны массив целых значений и целые числа n, m. Напишите программу для нахождения подмассива между индексами n и m.
 
-    public void printArrRangeElement(int[] arr, int n, int m) {
-        System.out.print("From " + n + " to " + m + ": ");
-        for (int i = n; i <= m; i++) {
-            System.out.print(arr[i] + " ");
+    public int[] printArrRangeElement(int[] arr, int n, int m) {
+        int[] arrInRange = new int[m - n + 1];
+        for (int i = 0; i < m - n + 1; i++) {
+            arrInRange[i] = arr[n + i];
         }
+        return arrInRange;
     }
 
     //Дан массив целых значений. Напишите программу для нахождения наибольшего и наименьшего элементов массива.
