@@ -1,9 +1,11 @@
 package com.company;
 
+import java.nio.charset.StandardCharsets;
+
 public class Main {
 
     public static void main(String[] args) {
-        HW6 six = new HW6();
+        /*HW6 six = new HW6();
         int[] myArray = {1, 3, 4, 1, 5, 5};
         double avg = six.findAverageArray(myArray);
         System.out.println(avg);
@@ -53,15 +55,30 @@ public class Main {
         HW5 example = new HW5();
         System.out.println(example.isOdd(4));
 
-        example.findNameWeek(9);
+        example.findNameWeek(9); */
+
+        String name = "DINara";
+        System.out.println(name.toLowerCase());
+
+        HW7 s = new HW7();
+
+        System.out.println("all vowels: " + s.isAllLetterVowel("IUaAI"));
+
+       // System.out.println(s.calculateSumDigitsNumber(222));
+
+        System.out.println(s.countDigitInNumber(12223212, '2'));
+
+        System.out.println("vowels " +  s.countVowels("Daaarrid"));
+
+
+        System.out.println("Area: " + s.calculateAreaRegularPolygon(6, 5));
+
+        System.out.println("count words: " + s.countWordsSplit("Java is good to learn Object Oriented programming."));
 
 
 
-
-
-
-
-    }}
+    }
+}
 
 
 
