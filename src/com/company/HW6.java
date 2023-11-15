@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class HW6 {
 
 
@@ -7,14 +9,15 @@ public class HW6 {
 
     public double findAverageArray(int[] a) {
         double sum = 0;
-        int count = 0;
-
         for (int i = 0; i < a.length; i++) {
             sum += a[i];
-            count++;
         }
-        double average = sum / count;
-        return average;
+        return sum / a.length;
+    }
+
+    // more shorter
+    public double findAverageArrayStream(int[] a) {
+        return Arrays.stream(a).sum() / a.length;
     }
 
     // Дан массив целых значений. Напишите программу для поиска дубликатов значений.
@@ -28,8 +31,12 @@ public class HW6 {
                 }
             }
         }
-
     }
+
+    /*for future
+    Set<Integer> duplicates = Arrays.stream(numbers).distinct().filter(number -> Collections.frequency(Arrays.asList(numbers), number) > 1).collect(Collectors.toSet());
+    // Выводим дубликаты
+    duplicates.forEach(System.out::println);*/
 
 
     //Дан массив целых значений. Напишите программу для проверки, содержит ли массив определенное значение.
@@ -42,6 +49,7 @@ public class HW6 {
         }
         return false;
     }
+
 
     //Дан массив целых значений. Напишите программу для нахождения индекса элемента массива.
 

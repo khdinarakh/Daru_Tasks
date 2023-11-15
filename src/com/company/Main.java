@@ -62,6 +62,9 @@ public class Main {
 
         HW7 s = new HW7();
 
+        System.out.println(s.formatTime(9600));
+        System.out.println(s.isPalindrome("adea"));
+
         System.out.println("all vowels: " + s.isAllLetterVowel("IUaAI"));
 
        // System.out.println(s.calculateSumDigitsNumber(222));
@@ -75,6 +78,22 @@ public class Main {
 
         System.out.println("count words: " + s.countWordsSplit("Java is good to learn Object Oriented programming."));
 
+        HW6 six = new HW6();
+        int[] myArray = {1, 3, 4, 1, 5, 5};
+        System.out.println("Average: " + six.findAverageArrayStream(myArray));
+
+        double[] arr1 = {10, 3};
+        double[] arr2 = {5, 7};
+
+        System.out.println(s.calculateDistance(arr1, arr2));
+
+        System.out.println("Day: " + s.getDaysInMonth(2033, 1));
+
+        System.out.println("GCD: " + s.findGCD(12, 8));
+
+        //System.out.println(s.returnNumberASC(-10));
+
+       // s.printToN(-10);
 
 
     }
